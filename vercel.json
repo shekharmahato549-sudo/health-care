@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "fastapi/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.11"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "fastapi/main.py"
+    }
+  ],
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key",
+    "SNOWFLAKE_USER": "@snowflake_user",
+    "SNOWFLAKE_PASSWORD": "@snowflake_password",
+    "SNOWFLAKE_ACCOUNT": "@snowflake_account"
+  },
+  "regions": ["iad1"]
+}
