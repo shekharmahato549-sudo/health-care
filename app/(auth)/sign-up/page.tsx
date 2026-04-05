@@ -4,6 +4,12 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/app/lib/auth-context'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sign Up - HealthCare Pro',
+  description: 'Create your healthcare account',
+}
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState('')

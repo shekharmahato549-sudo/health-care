@@ -5,6 +5,12 @@ import { useRouter } from 'next/navigation'
 import { useAuth } from '@/app/lib/auth-context'
 import { supabase } from '@/app/lib/supabase'
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Sign In - HealthCare Pro',
+  description: 'Sign in to your healthcare account',
+}
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
