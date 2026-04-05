@@ -13,13 +13,13 @@ export default function Home() {
       if (isAuthenticated && user) {
         // Redirect to dashboard based on role
         const dashboardMap: Record<string, string> = {
-          patient: '/dashboard/patient',
-          doctor: '/dashboard/doctor',
-          admin: '/dashboard/admin',
-          receptionist: '/dashboard/receptionist',
-          nurse: '/dashboard/nurse',
+          patient: '/patient',
+          doctor: '/doctor',
+          admin: '/admin',
+          receptionist: '/receptionist',
+          nurse: '/nurse',
         }
-        router.push(dashboardMap[user.role] || '/dashboard/patient')
+        router.push(dashboardMap[user.role || 'patient'] || '/patient')
       } else if (!loading && !isAuthenticated) {
         router.push('/sign-in')
       }
